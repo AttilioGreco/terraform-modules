@@ -19,8 +19,17 @@ variable "internal-network-cidr-dhcp-end" {
     default = "10.2.254.255"
 }
 
+variable "no_gateway" {
+    default = "true"  
+}
+
 variable "router_id" {
   default = ""
+}
+
+variable "router_name" {
+  default = "router"
+  
 }
 
 variable "host_routes" {

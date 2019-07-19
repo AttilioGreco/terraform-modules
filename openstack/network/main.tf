@@ -15,6 +15,7 @@ resource "openstack_networking_subnet_v2" "internal-subnet" {
   network_id = "${openstack_networking_network_v2.internal-network.id}"
   cidr = "${var.internal-network-cidr}"
   ip_version = 4
+  no_gateway = "${var.no_gateway}"
   dns_nameservers = ["${var.dns1}","${var.dns2}"]
   allocation_pools = {
     start = "${var.internal-network-cidr-dhcp-start}"
