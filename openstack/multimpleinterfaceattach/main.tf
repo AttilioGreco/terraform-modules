@@ -11,7 +11,7 @@ resource "openstack_networking_port_v2" "ports" {
 }
 
 resource "openstack_compute_interface_attach_v2" "ai_2" {
-  instance_id = "${openstack_compute_instance_v2.instance_1.id}"
+  instance_id = "${var.instance[count.index]}"
   port_id     = "${openstack_networking_port_v2.ports.*.id[count.index]}"
 }
 
